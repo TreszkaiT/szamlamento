@@ -1,0 +1,18 @@
+/* @import other-styles.css */
+.login-view {
+    background-image: url('images/art_back.jpg'); /* ("../../../src/main/resources/images/art_back.jpg"); */
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    height: 500px;
+}
+
+.login-view vaadin-login-form {
+    align-items: center;
+    display: flex;
+    max-width: 400px;
+}
+
+.login-view vaadin-login-form-wrapper {
+    background-image: none;
+}
