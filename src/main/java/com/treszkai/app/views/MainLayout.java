@@ -1,6 +1,8 @@
 package com.treszkai.app.views;
 
 
+import com.treszkai.app.viewcontrollers.ProductController;
+import com.treszkai.app.viewcontrollers.SecurityController;
 import com.vaadin.flow.component.applayout.AppLayout;
 import com.vaadin.flow.component.applayout.DrawerToggle;
 import com.vaadin.flow.component.button.Button;
@@ -17,12 +19,12 @@ import com.vaadin.flow.router.PageTitle;
 //@Route(value = "")
 public class MainLayout extends AppLayout {
 
-//    private SecurityController securityController;
-//    private ProductController productController;
+    private SecurityController securityController;
+    private ProductController productController;
 
-    public MainLayout(){//ProductController productController, SecurityController securityController) {           // v. így használok a Product Component Bean-ból; így nem lesz null
-//        this.productController = productController;
-//        this.securityController = securityController;
+    public MainLayout(ProductController productController, SecurityController securityController) {           // v. így használok a Product Component Bean-ból; így nem lesz null
+        this.productController = productController;
+        this.securityController = securityController;
 
         createHeader();
         createDrawer();
@@ -30,10 +32,10 @@ public class MainLayout extends AppLayout {
 
 
     private void createHeader() {
-        H1 logo = new H1("Önéletrajz adatokat tároló alkalmazás v.");// + productController.getProductVersion());
+        H1 logo = new H1("Önéletrajz adatokat tároló alkalmazás v." + productController.getProductVersion());
         logo.addClassNames("text-l", "m-m");
 
-        Button logout = new Button("Kilépés");//, e -> securityController.Logout());
+        Button logout = new Button("Kilépés", e -> securityController.Logout());
 
         HorizontalLayout header = new HorizontalLayout(new DrawerToggle(), logo, logout);
 
