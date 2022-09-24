@@ -1,11 +1,11 @@
 package com.treszkai.app.data.entity;
 
-import org.hibernate.envers.Audited;
+//import org.hibernate.envers.Audited;
 
 import javax.persistence.*;
 
 @Entity
-@Audited
+//@Audited
 @DiscriminatorColumn( name = "ITM_TYPE" )
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 @Table(name = "SZML_PARTNER")
