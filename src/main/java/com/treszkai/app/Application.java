@@ -9,6 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 /**
  * The entry point of the Spring Boot application.
@@ -33,6 +34,7 @@ import org.springframework.context.ConfigurableApplicationContext;
 @NpmPackage(value = "line-awesome", version = "1.3.0")
 @NpmPackage(value = "@vaadin-component-factory/vcf-nav", version = "1.0.6")
 @ConfigurationProperties
+@EnableJpaAuditing
 public class Application extends SpringBootServletInitializer implements AppShellConfigurator {
 
     //@Autowired

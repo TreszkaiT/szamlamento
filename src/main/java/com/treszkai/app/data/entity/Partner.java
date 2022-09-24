@@ -6,6 +6,8 @@ import javax.persistence.*;
 
 @Entity
 @Audited
+@DiscriminatorColumn( name = "ITM_TYPE" )
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 @Table(name = "SZML_PARTNER")
 public class Partner extends AbstractEntity{
 
@@ -21,6 +23,45 @@ public class Partner extends AbstractEntity{
     @Column(name = "PRT_LAST_NAME")
     private String lastName;
 
-    @OneToOne
+    @OneToOne(mappedBy = "partner")
     private Country country;
+
+    public Partner() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public Partner setId(Long id) {
+        this.id = id;
+        return this;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public Partner setFirstName(String firstName) {
+        this.firstName = firstName;
+        return this;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public Partner setLastName(String lastName) {
+        this.lastName = lastName;
+        return this;
+    }
+
+    public Country getCountry() {
+        return country;
+    }
+
+    public Partner setCountry(Country country) {
+        this.country = country;
+        return this;
+    }
 }

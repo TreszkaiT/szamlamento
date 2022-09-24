@@ -14,4 +14,27 @@ public class Country {
     @Column(name = "CNT_NAME")
     private String name;
 
+    @OneToOne
+    private Partner partner;
+
+    public Country() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public Country setId(Long id) {
+        this.id = id;
+        return this;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Country setName(String name) {
+        this.name = name;
+        return this;
+    }
 }
