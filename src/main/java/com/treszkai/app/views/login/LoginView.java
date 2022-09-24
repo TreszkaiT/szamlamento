@@ -9,7 +9,7 @@ import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 
 @Route("login")
-@PageTitle("Login | Önéletrajz adatok bevitele")
+@PageTitle("Login | Számlaadatok bevitele")
 public class LoginView extends VerticalLayout implements BeforeEnterListener {
 
     private LoginOverlay loginOverlay = new LoginOverlay();
@@ -20,7 +20,7 @@ public class LoginView extends VerticalLayout implements BeforeEnterListener {
 //        this.productController = productController;
         addClassName("login-view");
 
-        loginOverlay.setTitle("Önéletrajz adatokat tároló alkalmazás v.");// + productController.getProductVersion());
+        loginOverlay.setTitle("Számlaadatokat tároló alkalmazás v.");// + productController.getProductVersion());
         loginOverlay.setDescription("Készítette: T.Tamás");
         loginOverlay.setOpened(true);
         loginOverlay.setError(false);

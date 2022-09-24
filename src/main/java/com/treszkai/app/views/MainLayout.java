@@ -32,7 +32,7 @@ public class MainLayout extends AppLayout {
 
 
     private void createHeader() {
-        H1 logo = new H1("Önéletrajz adatokat tároló alkalmazás v." + productController.getProductVersion());
+        H1 logo = new H1("Számlaadatokat tároló alkalmazás v." + productController.getProductVersion());
         logo.addClassNames("text-l", "m-m");
 
         Button logout = new Button("Kilépés", e -> securityController.Logout());
